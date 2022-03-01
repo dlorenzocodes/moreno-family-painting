@@ -1,24 +1,48 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { IoHome } from 'react-icons/io5'
+import Button from '../components/Button'
 
 function Home() {
 
     const section = { 
-        hidden: { opacity: 0 }, 
-        visible: { opacity: 1}
-    }
-    const children = { 
-        hidden: { x: '100vw'}, 
+        hidden: { opacity: 0, x: '100vw'}, 
         visible: { 
-            x: '0', 
+            opacity: 1, 
+            x: 0,
             transition: { 
-                delay: 0.5, 
                 type: 'tween',
-                ease: 'easeInOut'
+                ease: 'easeInOut',
+                duration: 1,
             } 
         }
     }
+    
+    const serviceVarient ={
+        offscreen: { opacity: 0, x: '100vw' },
+        onscreen: {
+            opacity: 1,
+            x: 0,
+            transition:{
+                type: 'tween',
+                ease: 'easeInOut',
+                duration: 1
+            }
+        }
+    }
 
+    const growVarient = {
+        hidden: { opacity: 0, scale: 0 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                type: 'tween',
+                ease: 'easeInOut',
+                duration: 1
+            }
+        }
+    }
+   
     return (
         <div className='content-wrapper'>
             <section className='headline-section'>
@@ -28,20 +52,79 @@ function Home() {
                     initial='hidden'
                     animate='visible'
                 >
-                    <motion.h1 variants={children}>Painting Cedar Rapids Homes</motion.h1>
-                    <motion.h3 variants={children}>and surrounding areas since 2016</motion.h3>
-                    <motion.span 
-                        variants={children}
-                        whileHover={{ 
-                            backgroundColor: 'rgba(0, 0, 0, 0)', 
-                            border: '1px solid #F05241'
-                        }}
-                        className='headline-cta' 
-                    >
-                        <Link to='/contact-us'>Request Free Quote</Link>
-                    </motion.span>
-                
+                    <h1>Painting Cedar Rapids Homes</h1>
+                    <h3>and surrounding areas since 2016</h3>
+                    <Button>Request Free Quote</Button>
                 </motion.div>
+            </section>
+
+            <section className='services-wrapper'>
+                    <motion.div
+                     variants={growVarient}
+                     initial='hidden'
+                     animate='visible'
+                    >
+                        <h2>How we can serve you</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur 
+                            adipiscing elit, sed do eiusmod tempor incididunt 
+                            ut labore  et dolore magna aliqua. Ut enim ad minim veniam, 
+                            quis nostrud exercitation  ullamco laboris nisi ut aliquip 
+                            ex ea commodo consequat. 
+                        </p>
+                    </motion.div>
+                   
+                    <div className='service-list-wrapper'>
+
+                        <motion.div 
+                            className='services-list'
+                            variants={serviceVarient}
+                            initial='offscreen'
+                            animate='onscreen'
+                        >
+
+                            <motion.div className='service-item' variants={serviceVarient}>
+                                <IoHome />
+                                <h3>Interior Painting</h3>
+                            </motion.div>
+
+                            <motion.div className='service-item' variants={serviceVarient}>
+                                <IoHome />
+                                <h3>Interior Painting</h3>
+                            </motion.div>
+
+                            <motion.div className='service-item' variants={serviceVarient}>
+                                <IoHome />
+                                <h3>Interior Painting</h3>
+                            </motion.div>
+
+                            <motion.div className='service-item' variants={serviceVarient}>
+                                <IoHome />
+                                <h3>Interior Painting</h3>
+                            </motion.div>
+
+                            <motion.div className='service-item' variants={serviceVarient}>
+                                <IoHome />
+                                <h3>Interior Painting</h3>
+                            </motion.div>
+
+                            <motion.div className='service-item' variants={serviceVarient}>
+                                <IoHome />
+                                <h3>Interior Painting</h3>
+                            </motion.div>
+
+                        </motion.div>
+
+                    </div>   
+
+                    <motion.div
+                         variants={growVarient}
+                         initial='hidden'
+                         animate='visible'
+                    >
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                            sed do eiusmod tempor incididunt ut labore  et dolore </p>
+                        <Button>Request Free Quote</Button>
+                    </motion.div>
             </section>
         </div>
     )

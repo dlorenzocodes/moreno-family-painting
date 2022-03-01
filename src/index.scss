@@ -26,3 +26,21 @@ a{
     flex-direction: column;
     height: 100vh;
 }
+
+.headline-cta{
+    font-size: 0.75rem;
+    font-family: $tw-font-family;
+    font-weight: $tw-regular-weight;
+    background-color: $accent-color;
+    padding: 0.5rem 0.75rem;     
+    border-radius: 5px; 
+    color: #fff;
+    transition: all 300ms ease-in-out;
+    text-transform: uppercase;
+}
+
+.headline-cta:hover{
+    background-color: transparent;
+    border: 1px solid $accent-color;
+    color: $text-color
+}
