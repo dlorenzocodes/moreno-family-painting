@@ -1,0 +1,50 @@
+
+footer{
+
+    font-family: $ub-font-family;
+    font-weight: $ub-bold-weight;
+    font-size: 0.8rem;
+    color: $accent-color;
+    background-color: $primary-color;
+    text-transform: uppercase;
+
+    p{
+        color: $accent-color; 
+        cursor: pointer;
+    }
+
+    .contact-link::after{
+        content: '';
+        display: block;
+        width: 0;
+        height: 1px;
+        margin-top: 0.2rem;
+        background-color: $accent-color;
+        transition: width 300ms ease-in-out;
+    }
+
+    .contact-link:hover::after{
+        width: 100%;
+    }
+
+    .footer-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    }
+
+    .copyright{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1.6rem;
+
+        img{
+            width: 6rem;
+            margin-bottom: 1rem;
+        }
+    }
+}

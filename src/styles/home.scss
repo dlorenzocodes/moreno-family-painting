@@ -1,0 +1,59 @@
+
+
+main{
+    flex-grow: 1;
+
+    .content-wrapper{
+
+        .headline-section{
+            background-image: url('../assets/heroImage.jpg');
+            background-image: linear-gradient( rgba(217, 196, 196, 0.85), rgba(217, 196, 196, 0.85)), url('../assets/heroImage.jpg');
+            background-position: -288px;
+            background-size: 977px;
+            background-repeat: no-repeat;
+            height: 242px;
+
+            .title-wrapper{
+                height: 242px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-transform: uppercase;
+                text-align: center;
+
+                h1{
+                    font-family: $ub-font-family;
+                    font-size: 1.8rem;
+                    font-weight: $ub-bold-weight;
+                   
+                }
+
+                h3{
+                    font-family: $tw-font-family;
+                    font-weight: $tw-regular-weight;
+                    font-size: 0.75rem;
+                    letter-spacing: 0.05rem;
+                    padding: 1rem 0;
+                }
+
+                .headline-cta{
+                    font-size: 0.75rem;
+                    font-family: $tw-font-family;
+                    font-weight: $tw-regular-weight;
+                    background-color: $accent-color;
+                    padding: 0.5rem 0.75rem;     
+                    border-radius: 5px;  
+                    
+                    a{
+                        color: #fff;
+                    }
+
+                    a:hover{
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,5 +1,8 @@
 // Imports
 @import 'styles/variables';
+@import 'styles/navbar.scss';
+@import 'styles/footer.scss';
+@import 'styles/home.scss';
 
 // Resets
 *,
@@ -14,3 +17,12 @@ body{
     font-family: $tw-font-family;
 }
 
+a{
+    text-decoration: none;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}

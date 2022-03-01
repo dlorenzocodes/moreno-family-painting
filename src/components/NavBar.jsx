@@ -1,15 +1,24 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { VscClose } from 'react-icons/vsc'
+import MFPLogo from '../assets/MFPLogo.png'
 import { AiOutlineMenu } from 'react-icons/ai'
 
+
 function NavBar() {
+
+    const [isOpen, setIsOpen] = useState(false)
+
+
     return (
         <nav className='main-nav-container'>
             <div className='nav-wrapper'>
-                <img src="" alt=""/>
-                <div className='mobile-open-close'>
-                    <AiOutlineMenu />
+                <img src={MFPLogo} alt='moreno family logo'/>
+                <div 
+                    className='mobile-open-close'
+                    onClick={() => setIsOpen(isOpen => !isOpen)}
+                >
+                    { isOpen ? <VscClose className='animation'/> : <AiOutlineMenu className='animation'/>}
                 </div>
 
                 <div className='menu-tabs'>

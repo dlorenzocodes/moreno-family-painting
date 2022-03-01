@@ -1,0 +1,42 @@
+
+.nav-wrapper{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #fff;
+
+    img{
+        width: 6rem;
+    }
+
+    .mobile-open-close{
+
+        cursor: pointer;
+       
+
+        svg{
+            font-size: 2rem;
+        }
+    }
+
+    .menu-tabs{
+        display: none;
+    }
+}
+
+.animation{
+
+    animation: showandhide 500ms normal ease-in-out;
+
+    @keyframes showandhide {
+        from{
+            opacity: 0;
+        }
+
+        to{
+            opacity: 1;
+        }
+    }
+}
