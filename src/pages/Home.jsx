@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { IoHome } from 'react-icons/io5'
 import Button from '../components/Button'
+import Reviews from '../components/Reviews'
 
 function Home() {
 
@@ -126,6 +127,8 @@ function Home() {
                         <Button>Request Free Quote</Button>
                     </motion.div>
             </section>
+
+            <Reviews />
         </div>
     )
 }

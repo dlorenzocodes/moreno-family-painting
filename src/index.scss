@@ -3,6 +3,7 @@
 @import 'styles/navbar.scss';
 @import 'styles/footer.scss';
 @import 'styles/home.scss';
+@import 'styles/reviews.scss';
 
 // Resets
 *,
@@ -19,6 +20,22 @@ body{
 
 a{
     text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+h2{
+    font-family: $ub-font-family;
+    font-size: $section-title-size;
+    text-transform: uppercase;
+    font-weight: $ub-bold-weight;
+}
+
+p{
+    font-weight: $tw-regular-weight;
+    font-size: 0.75rem;
 }
 
 .main-container{

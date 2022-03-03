@@ -1,0 +1,51 @@
+
+.reviews-container{
+    text-align: center;
+    padding: 2rem 3rem;
+    height: 23vh;
+    min-height: 24vh;
+    overflow: hidden;
+
+    .arrows-container{
+        padding: 1rem 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+
+        button{
+            background-color: transparent;
+            border: none;
+            color: $accent-color;
+            cursor: pointer;
+        }
+
+        button.unabled{
+            color: $primary-color;
+        }
+    }
+
+    .reviews-list{
+        display: flex;
+        margin-top: 0.5rem;
+        position: relative;
+        transition: transform 300ms ease-in-out;
+           
+
+        .review-item{
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            
+            span{
+                margin-top: 1rem;
+                display: block;
+                font-size: 0.75rem;
+            }
+        }
+
+        .review-item.active {
+            opacity: 1;
+        }
+    }
+}
