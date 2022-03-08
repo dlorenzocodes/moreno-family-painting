@@ -2,6 +2,9 @@ import { motion } from 'framer-motion'
 import { IoHome } from 'react-icons/io5'
 import Button from '../components/Button'
 import Reviews from '../components/Reviews'
+import Gallery from '../components/Gallery'
+import AboutUs from '../components/AboutUs'
+
 
 function Home() {
 
@@ -59,76 +62,81 @@ function Home() {
                 </motion.div>
             </section>
 
-            <section className='services-wrapper'>
-                    <motion.div
-                     variants={growVarient}
-                     initial='hidden'
-                     animate='visible'
-                    >
-                        <h2>How we can serve you</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit, sed do eiusmod tempor incididunt 
-                            ut labore  et dolore magna aliqua. Ut enim ad minim veniam, 
-                            quis nostrud exercitation  ullamco laboris nisi ut aliquip 
-                            ex ea commodo consequat. 
-                        </p>
-                    </motion.div>
+            <section 
+                id='services' 
+                className='services-wrapper'
+            >
+                <motion.div
+                    variants={growVarient}
+                    initial='hidden'
+                    animate='visible'
+                >
+                    <h2>How we can serve you</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur 
+                        adipiscing elit, sed do eiusmod tempor incididunt 
+                        ut labore  et dolore magna aliqua. Ut enim ad minim veniam, 
+                        quis nostrud exercitation  ullamco laboris nisi ut aliquip 
+                        ex ea commodo consequat. 
+                    </p>
+                </motion.div>
                    
-                    <div className='service-list-wrapper'>
+                <div className='service-list-wrapper'>
 
-                        <motion.div 
-                            className='services-list'
-                            variants={serviceVarient}
-                            initial='offscreen'
-                            animate='onscreen'
-                        >
+                    <motion.div 
+                        className='services-list'
+                        variants={serviceVarient}
+                        initial='offscreen'
+                        animate='onscreen'
+                    >
 
-                            <motion.div className='service-item' variants={serviceVarient}>
-                                <IoHome />
-                                <h3>Interior Painting</h3>
-                            </motion.div>
-
-                            <motion.div className='service-item' variants={serviceVarient}>
-                                <IoHome />
-                                <h3>Interior Painting</h3>
-                            </motion.div>
-
-                            <motion.div className='service-item' variants={serviceVarient}>
-                                <IoHome />
-                                <h3>Interior Painting</h3>
-                            </motion.div>
-
-                            <motion.div className='service-item' variants={serviceVarient}>
-                                <IoHome />
-                                <h3>Interior Painting</h3>
-                            </motion.div>
-
-                            <motion.div className='service-item' variants={serviceVarient}>
-                                <IoHome />
-                                <h3>Interior Painting</h3>
-                            </motion.div>
-
-                            <motion.div className='service-item' variants={serviceVarient}>
-                                <IoHome />
-                                <h3>Interior Painting</h3>
-                            </motion.div>
-
+                        <motion.div className='service-item' variants={serviceVarient}>
+                            <IoHome />
+                            <h3>Interior Painting</h3>
                         </motion.div>
 
-                    </div>   
+                        <motion.div className='service-item' variants={serviceVarient}>
+                            <IoHome />
+                            <h3>Exterior Painting</h3>
+                        </motion.div>
 
-                    <motion.div
-                         variants={growVarient}
-                         initial='hidden'
-                         animate='visible'
-                    >
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                            sed do eiusmod tempor incididunt ut labore  et dolore </p>
-                        <Button>Request Free Quote</Button>
+                        <motion.div className='service-item' variants={serviceVarient}>
+                            <IoHome />
+                            <h3>Cabinet Painting</h3>
+                        </motion.div>
+
+                        <motion.div className='service-item' variants={serviceVarient}>
+                            <IoHome />
+                            <h3>Decks</h3>
+                        </motion.div>
+
+                        <motion.div className='service-item' variants={serviceVarient}>
+                            <IoHome />
+                            <h3>Minor Repairs</h3>
+                        </motion.div>
+
+                        <motion.div className='service-item' variants={serviceVarient}>
+                            <IoHome />
+                            <h3>Commercial Painting</h3>
+                        </motion.div>
+
                     </motion.div>
+
+                </div>   
+
+                <motion.div
+                        variants={growVarient}
+                        initial='hidden'
+                        animate='visible'
+                >
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore  et dolore </p>
+                    <Button>Request Free Quote</Button>
+                </motion.div>
             </section>
 
             <Reviews />
+            <Gallery />
+            <AboutUs />
         </div>
     )
 }

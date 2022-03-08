@@ -1,7 +1,6 @@
-import { useState, useEffect, useRef } from 'react'
 import { v4 as uuidv4 } from 'uuid';
-import { motion, AnimatePresence } from 'framer-motion'
 import { MdArrowForwardIos } from 'react-icons/md'
+import { useState, useEffect, useRef } from 'react'
 import { MdOutlineArrowBackIosNew  } from 'react-icons/md'
 
 function Reviews() {
@@ -12,6 +11,7 @@ function Reviews() {
     const [diableForwardBtn, setDisableForwardBtn] = useState(false)
     const [diableBackwardBtn, setDisableBackwardBtn] = useState(true)
     const listRef = useRef()
+
 
     const style = {
         transform: `translateX(-${slide}px)`
@@ -101,10 +101,14 @@ function Reviews() {
         }
     }
 
+   
+
+    
+
     
 
     return (
-        <section className='reviews-container'>
+        <section  id='reviews' className='reviews-container'>
             <h2>Reviews</h2>
             <div className='arrows-container'>
                 <button 
@@ -130,7 +134,8 @@ function Reviews() {
                 ref={listRef}
                 style={style}
             >
-               {reviews.map((review, index) => (
+                {reviews.map((review, index) => (
+                    
                     <div
                         className={index === current ? 
                         'review-item active' : 'review-item'} 

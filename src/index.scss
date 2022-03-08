@@ -4,6 +4,8 @@
 @import 'styles/footer.scss';
 @import 'styles/home.scss';
 @import 'styles/reviews.scss';
+@import 'styles/gallery.scss';
+@import 'styles/about.scss';
 
 // Resets
 *,
@@ -42,6 +44,7 @@ p{
     display: flex;
     flex-direction: column;
     height: 100vh;
+    position: relative;
 }
 
 .headline-cta{
@@ -60,4 +63,17 @@ p{
     background-color: transparent;
     border: 1px solid $accent-color;
     color: $text-color
+}
+
+.scroll-btn{
+    position: fixed;
+    right: 12px;
+    bottom: 33px;
+    background: transparent;
+    border: 1px solid $accent-color;
+    padding: 0.8rem;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    color: $accent-color;
+    cursor: pointer;
 }

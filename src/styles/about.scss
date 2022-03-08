@@ -1,0 +1,19 @@
+
+.about-container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    text-align: center;
+
+    .about-info-wrapper{
+        p{
+            padding: 0.8125rem 0 2.25rem;
+        }
+    }
+
+    .about-info-photo{
+        height: 292px;
+        width: 90%;
+        margin: 0 auto;
+    }
+}
