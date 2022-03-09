@@ -5,29 +5,14 @@ main{
 
     .content-wrapper{
 
-        .headline-section{
+        .headline-home-section{
             background-image: url('../assets/heroImage.jpg');
             background-image: linear-gradient( rgba(217, 196, 196, 0.85), rgba(217, 196, 196, 0.85)), url('../assets/heroImage.jpg');
             background-position: -288px;
             background-size: 977px;
             background-repeat: no-repeat;
-            height: 242px;
 
             .title-wrapper{
-                height: 242px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-transform: uppercase;
-                text-align: center;
-
-                h1{
-                    font-family: $ub-font-family;
-                    font-size: 1.8rem;
-                    font-weight: $ub-bold-weight;
-                   
-                }
 
                 h3{
                     font-family: $tw-font-family;

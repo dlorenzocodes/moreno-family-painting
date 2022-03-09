@@ -1,0 +1,13 @@
+.headline-contact-section{
+    background-image: url('../assets/contact-image.jpg');
+    background-repeat: no-repeat;
+    background-size: 465px;
+    background-position: center -307px;
+
+    .title-wrapper{
+
+        h1{
+            color: $accent-color;
+        }
+    }
+}

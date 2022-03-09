@@ -49,7 +49,7 @@ function Home() {
    
     return (
         <div className='content-wrapper'>
-            <section className='headline-section'>
+            <section className='headline-section headline-home-section'>
                 <motion.div 
                     className='title-wrapper'
                     variants={section}

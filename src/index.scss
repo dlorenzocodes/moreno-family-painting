@@ -6,6 +6,8 @@
 @import 'styles/reviews.scss';
 @import 'styles/gallery.scss';
 @import 'styles/about.scss';
+@import 'styles/gallery-page.scss';
+@import 'styles/contact-page.scss';
 
 // Resets
 *,
@@ -47,6 +49,26 @@ p{
     position: relative;
 }
 
+.headline-section{
+    height: 242px;
+}
+
+.title-wrapper{
+    height: 242px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h1{
+    font-family: $ub-font-family;
+    font-size: 1.8rem;
+    font-weight: $ub-bold-weight;
+}
+
 .headline-cta{
     font-size: 0.75rem;
     font-family: $tw-font-family;
@@ -65,15 +87,4 @@ p{
     color: $text-color
 }
 
-.scroll-btn{
-    position: fixed;
-    right: 12px;
-    bottom: 33px;
-    background: transparent;
-    border: 1px solid $accent-color;
-    padding: 0.8rem;
-    border-radius: 50%;
-    font-size: 0.8rem;
-    color: $accent-color;
-    cursor: pointer;
-}
+
