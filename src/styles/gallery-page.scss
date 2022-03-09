@@ -1,8 +1,38 @@
 
-.headline-gallery-section{
-    background-image: url('../assets/heroImage.jpg');
-    background-image: linear-gradient( rgba(217, 196, 196, 0.85), rgba(217, 196, 196, 0.85)), url('../assets/heroImage.jpg');
-    background-position: -288px;
-    background-size: 977px;
-    background-repeat: no-repeat;
+.content-wrapper{
+    
+    .headline-gallery-section{
+        background-image: url('../assets/heroImage.jpg');
+        background-image: linear-gradient( rgba(217, 196, 196, 0.85), rgba(217, 196, 196, 0.85)), url('../assets/heroImage.jpg');
+        background-position: -288px;
+        background-size: 977px;
+        background-repeat: no-repeat;
+    }
+
+    .images-section-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3.375rem;
+
+        .before-after-btns{
+            button{
+                background: transparent;
+                border: none;
+                color: $primary-color;
+                font-family: $ub-font-family;
+                font-size: 0.9375rem;
+                font-weight: $ub-bold-weight;
+                text-transform: uppercase;
+                margin: 0 0.5rem;
+                cursor: pointer;
+                transition: color 300ms ease-in-out;
+            }
+
+            button.active{
+                color: $accent-color;
+                border-bottom: 2px solid $accent-color;
+            }
+        }
+    }
 }
