@@ -4,25 +4,6 @@
     text-align: center;
     background-color: $primary-color;
 
-    .images-container{
-        width: 80%;
-        margin: 0 auto;
-        padding-top: 2.125rem;
-
-        .images-list{
-            padding: 0 1rem;
-
-            li{
-                padding-bottom: 2.125rem;
-            }
-        }
-    }
-
-    .image-wrapper{
-        height: 139px;
-        border-radius: 5px;
-    }
-
     .gallery-btn{
         margin: 0.25rem 0;
         padding: 0.5rem 0.75rem;

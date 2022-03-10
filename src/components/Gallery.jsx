@@ -7,7 +7,8 @@ import URLContext from '../context/URLContext'
 
 function Gallery() {
 
-    const { loading, photoUrls } = useContext(URLContext)
+    const { loading, afterImgUrls } = useContext(URLContext)
+
 
     if(loading) return <p>Loading...</p>
 
@@ -17,7 +18,7 @@ function Gallery() {
             
             <div className='images-container'>
                 <ul className='images-list'>
-                   {photoUrls.map((url, i) => (
+                   {afterImgUrls.map((url) => (
                        <GalleryItem url={url} key={uuidv4()}/>
                    ))}
                 </ul>

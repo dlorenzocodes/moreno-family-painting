@@ -6,7 +6,7 @@
 @import 'styles/reviews.scss';
 @import 'styles/gallery.scss';
 @import 'styles/about.scss';
-@import 'styles/gallery-page.scss';
+@import 'styles/portfolio-page.scss';
 @import 'styles/contact-page.scss';
 
 // Resets
@@ -22,12 +22,10 @@ body{
     font-family: $tw-font-family;
 }
 
-a{
-    text-decoration: none;
-}
-
-li{
-    list-style: none;
+h1{
+    font-family: $ub-font-family;
+    font-size: 1.8rem;
+    font-weight: $ub-bold-weight;
 }
 
 h2{
@@ -40,6 +38,15 @@ h2{
 p{
     font-weight: $tw-regular-weight;
     font-size: 0.75rem;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
 }
 
 .main-container{
@@ -63,12 +70,6 @@ p{
     text-align: center;
 }
 
-h1{
-    font-family: $ub-font-family;
-    font-size: 1.8rem;
-    font-weight: $ub-bold-weight;
-}
-
 .headline-cta{
     font-size: 0.75rem;
     font-family: $tw-font-family;
@@ -85,6 +86,26 @@ h1{
     background-color: transparent;
     border: 1px solid $accent-color;
     color: $text-color
+}
+
+.images-container{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 2.125rem;
+
+    .images-list{
+        
+        padding: 0 1rem;
+
+        li{
+            padding-bottom: 2.125rem;
+
+            .image-wrapper{
+                height: 139px;
+                border-radius: 5px;
+            }
+        }
+    }
 }
 
 

@@ -1,12 +1,16 @@
 
-import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
+import AfterImgGallery from '../components/AfterImgGallery'
+import BeforeImgGallery from '../components/BeforeImgGallery'
+
+
 
 
 function Portfolio() {
 
-    const [beforeBtn, setBeforeBtn] = useState(true)
-    const [afterBtn, setAfterBtn] = useState(false)
+
+    const [isActive, setIsActive] = useState(true)
 
     const section = { 
         hidden: { opacity: 0, x: '100vw'}, 
@@ -18,16 +22,6 @@ function Portfolio() {
                 ease: 'easeInOut',
                 duration: 1,
             } 
-        }
-    }
-
-    const handleClick = (e) => {
-        if(e.target.id === 'before'){
-            setBeforeBtn(true)
-            setAfterBtn(false)
-        } else{
-            setBeforeBtn(false)
-            setAfterBtn(true)
         }
     }
 
@@ -48,16 +42,16 @@ function Portfolio() {
             <section className='images-section-wrapper'>
                 <div className='before-after-btns'>
                     <button 
-                        onClick={handleClick} 
-                        className={beforeBtn ? 'active' : null}
+                        onClick={() => setIsActive(isActive => !isActive)} 
+                        className={isActive ? 'active' : null}
                         type='button'
                         id='before'
                     >
                         Before
                     </button>
                     <button 
-                        onClick={handleClick} 
-                        className={afterBtn ? 'active' : null}
+                        onClick={() => setIsActive(isActive => !isActive)} 
+                        className={!isActive ? 'active' : null}
                         type='button'
                         id='after'
                     >
@@ -66,7 +60,7 @@ function Portfolio() {
                 </div>
 
                 <div className='images-container'>
-
+                    {isActive ? <BeforeImgGallery /> : <AfterImgGallery />}
                 </div>
             </section>
         </div>
