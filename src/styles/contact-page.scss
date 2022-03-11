@@ -1,3 +1,4 @@
+
 .headline-contact-section{
     background-image: url('../assets/contact-image.jpg');
     background-repeat: no-repeat;
@@ -8,6 +9,124 @@
 
         h1{
             color: $accent-color;
+        }
+    }
+}
+
+.contact-info-container{
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+
+    .contact-info{
+        align-self: center;
+        text-align: center;
+        margin-bottom: 3rem;
+        
+        h2{
+            margin-bottom: 0.9rem;
+        }
+    }
+
+    form{
+
+        .name-inputs{
+            display: flex;
+            flex-direction: row;
+            border: none;
+            justify-content: space-between;
+
+            #name{
+                margin-right: 0.25rem;
+            }
+
+            #lastname{
+                margin-left: 0.25rem;
+            }
+        }
+
+        input,
+        textarea{
+            padding: 0.8rem 0.5rem;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            border: 1px solid $accent-color;
+            font-family: $tw-font-family;
+            resize: vertical;
+
+            &::placeholder{
+                color: $primary-color;
+                text-transform: uppercase;
+                font-size: 0.7rem;
+                font-family: $tw-font-family;
+            }
+
+            &:focus{
+                outline: 2px dashed $primary-color;
+            }
+        }
+
+        .project-options{
+            border: none;
+            margin-bottom: 1rem;
+
+            legend{
+                text-transform: uppercase;
+                font-weight: $tw-semibold-wight;
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+            }
+
+            div{
+                position: relative;
+                display: flex;
+                align-items: center;
+                padding-bottom: 0.8rem;
+
+                input[type='checkbox']{
+
+                    opacity: 0;
+                    width: auto;
+                    margin: 0;
+                    cursor: pointer;
+
+                    &:checked + label::after{
+                        content: '';
+                        position: absolute;
+                        left: 2px;
+                        top: 3px;
+                        width: 10px;
+                        height: 10px;
+                        border-right: 2px solid $accent-color;
+                        border-bottom: 2px solid $accent-color;
+                        background-color: transparent;
+                        transform: rotate(45deg);
+                    }
+                }
+
+                label{
+                    margin-left: 0.8rem;
+                    font-size: 0.9rem;
+                    cursor: pointer;
+
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 4px;
+                        width: 15px;
+                        height: 15px;
+                        border: 1px solid $accent-color;
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+        
+        button{
+            width: 25%;
+            margin: 0 auto;
+            display: block;
         }
     }
 }

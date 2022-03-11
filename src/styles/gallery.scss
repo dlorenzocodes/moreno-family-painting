@@ -17,11 +17,11 @@
         border-radius: 5px;
         transition: all 300ms ease-in-out;
         cursor: pointer;
-    }
 
-    .gallery-btn:hover{
-        background-color: $accent-color;
-        border: 1px solid $primary-color;
-        color: #fff;
+        &:hover{
+            background-color: $accent-color;
+            border: 1px solid $primary-color;
+            color: #fff;
+        }
     }
 }

@@ -69,6 +69,15 @@ function NavBar() {
                     ref={navHight}
                     style={style}
                 >
+                    
+                    <Link to='/'>
+                    <li
+                        className={location.pathname === '/' ? 'hidde' : null }
+                    >
+                        Home
+                    </li>
+                    </Link>
+
                     <li className={location.pathname === '/' ? null : 'hidde' }>
                         <LinkS 
                             activeClass='active'

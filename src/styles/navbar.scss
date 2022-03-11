@@ -62,11 +62,12 @@
                 width: 100%;
                 text-align: center;
                 cursor: pointer;
-            }
 
-            li:hover{
-                background: $accent-color;
-                color: #fff;
+
+                &:hover{
+                    background: $accent-color;
+                    color: #fff;
+                }
             }
 
             li.hidde{

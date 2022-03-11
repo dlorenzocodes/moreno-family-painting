@@ -49,6 +49,16 @@ li{
     list-style: none;
 }
 
+button{
+    background-color: #F05241;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    cursor: pointer;
+}
+
 .main-container{
     display: flex;
     flex-direction: column;
