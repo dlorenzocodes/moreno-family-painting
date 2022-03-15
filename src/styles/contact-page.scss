@@ -28,6 +28,12 @@
         }
     }
 
+    .error{
+        text-align: center;
+        padding-bottom: 2rem;
+        color: $accent-color;
+    }
+
     form{
 
         .name-inputs{
@@ -36,13 +42,28 @@
             border: none;
             justify-content: space-between;
 
-            #name{
+            label{
+                padding: 0;
+                display: inline;
+            }
+
+            #input-name{
                 margin-right: 0.25rem;
             }
 
-            #lastname{
+            #input-lastname{
                 margin-left: 0.25rem;
             }
+
+            #lastname,
+            #name{
+                margin-top: 0.5rem;
+            }
+        }
+
+        label{
+            padding-bottom: 0.5rem;
+            display: block;
         }
 
         input,
@@ -75,6 +96,11 @@
                 font-weight: $tw-semibold-wight;
                 font-size: 0.9rem;
                 margin-bottom: 0.5rem;
+
+                span{
+                    font-size: 0.6rem;
+                    font-style: italic;
+                }
             }
 
             div{
