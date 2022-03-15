@@ -119,3 +119,17 @@ button{
 }
 
 
+// Override Toast Styles
+
+.Toastify__toast{
+    font-family: $tw-font-family !important;
+}
+
+.Toastify__progress-bar--success{
+    background: #ffb8b0 !important;
+}
+
+.Toastify__toast-icon > svg{
+    fill: #ffb8b0 !important;
+}
+

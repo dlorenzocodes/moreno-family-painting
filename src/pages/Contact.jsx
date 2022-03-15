@@ -1,5 +1,7 @@
-import { useState } from 'react'
 import DOMPurify from 'dompurify';
+import { useState, useEffect } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 import { useFormValidation } from '../hooks/useFormValidation'
 
 
@@ -16,7 +18,23 @@ function Contact() {
     const { name, lastname, email, phone, message } = formData
 
     const { validateForm, error} = useFormValidation()
-    
+
+    const [isSent, setIsSent] = useState(false)
+
+    useEffect(() => {
+        if(isSent){
+            toast.success('Thank you for your submission. We will contact you shortly!')
+            setFormData({
+                name: '',
+                lastname: '',
+                email: '',
+                phone: '',
+                message: '',
+            })
+        } 
+
+    }, [isSent])
+
     const handleForm = (e) => {
         setFormData((prevState) => ({
             ...prevState,
@@ -24,14 +42,14 @@ function Contact() {
         }))
     }
 
-   
-
     const handleSubmitForm = (e) => {
         e.preventDefault()
         validateForm(name, lastname, email, phone)
         const cleanMessage = DOMPurify.sanitize(message, {FORBID_TAGS: ['img', 'a', 'script', 'svg']})
         formData.message = cleanMessage
         console.log(formData)
+        setIsSent(true)
+        
     }
 
 
@@ -156,6 +174,7 @@ function Contact() {
                     />
                     <button type='submit'>Send</button>
                 </form>
+                <ToastContainer/>
             </section>
         </div>
     )
