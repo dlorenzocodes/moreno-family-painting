@@ -1,4 +1,4 @@
-
+@import 'mixin.scss';
 
 main{
     flex-grow: 1;
@@ -7,28 +7,40 @@ main{
 
         .headline-home-section{
             background-image: url('../assets/heroImage.jpg');
-            background-image: linear-gradient( rgba(217, 196, 196, 0.85), rgba(217, 196, 196, 0.85)), url('../assets/heroImage.jpg');
-            background-position: -288px;
+            background-image: linear-gradient( $background-mobile-gradient, $background-mobile-gradient), url('../assets/heroImage.jpg');
+            background-position: -288px top;
             background-size: 977px;
             background-repeat: no-repeat;
+            background-attachment: fixed;
+            @include tablet {
+                background-image: linear-gradient( $background-gradient, $background-gradient), url('../assets/heroImage.jpg');
+                background-size: 1196px;
+                background-position: -189px -50px;
+            }
 
             .title-wrapper{
-
                 h3{
                     font-family: $tw-font-family;
                     font-weight: $tw-regular-weight;
                     font-size: 0.75rem;
                     letter-spacing: 0.05rem;
                     padding: 1rem 0;
+                    @include tablet{
+                        font-size: 0.85rem;
+                    }
                 }
             }
         }
 
         .services-wrapper{
-
             background-color: $primary-color;
             padding: 3rem 0;
             text-align: center;
+
+            .section-info{  
+                width: calc(85% - 2rem);
+                margin: 0 auto;   
+            }
 
             p{
                 margin: 2rem 0;
@@ -36,19 +48,29 @@ main{
             }
 
             .service-list-wrapper{
-
                 padding: 0 1rem;
+                @include tablet{
+                    padding: 1.5rem 1rem
+                }
 
                 .services-list{
                     color: $accent-color;
-                    width: 80%;
-                    margin: 0 auto;
-    
+                    @include tablet{
+                        @include grid($grid-template-columns: 1fr 1fr, $grid-gap: 2rem);
+                        width: 85%;
+                        margin: 0 auto;
+                    }
+
                     .service-item{
                         border: 1px solid $accent-color;
                         padding: 3rem;
-                        margin-bottom: 2rem;
+                        margin: 0 auto 3rem;
+                        width: 100%;
+                        max-width: 300px;
                         border-radius: 5px;
+                        @include tablet{
+                            margin-bottom: 0;
+                        }
     
                         svg{
                             font-size: 1.8rem;

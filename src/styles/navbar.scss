@@ -11,6 +11,9 @@
     
         img{
             width: 6rem;
+            @include tablet{
+                width: 7rem;
+            }
         }
     
         .mobile-open-close{

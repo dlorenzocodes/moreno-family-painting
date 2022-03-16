@@ -1,0 +1,56 @@
+@use 'variables.scss';
+
+@mixin grid (
+    $grid-template-columns: false,
+    $grid-template-rows: false,
+    $grid-gap: false,
+    $grid-auto-rows: false,
+){
+    display: grid;
+    @if $grid-template-columns != false {
+        grid-template-columns: $grid-template-columns;
+    }
+
+    @if $grid-template-rows != false {
+        grid-template-rows: $grid-template-rows;
+    }
+
+    @if $grid-gap != false {
+        gap: $grid-gap;
+    }
+
+    @if $grid-auto-rows != false {
+        grid-auto-rows: $grid-auto-rows;
+    }
+}
+
+
+@mixin small-screen {
+    @media only screen and (max-width: $iphoneSE-width){
+        @content
+    }
+};
+
+@mixin tablet {
+    @media only screen and (min-width: $tablet-width){
+        @content;  
+    }
+};
+
+@mixin ipad {
+    @media only screen and (min-width: $ipad-width){
+        @content
+    }
+};
+
+@mixin desktop {
+    @media only screen and (min-width: $desktop-width){
+        @content
+    }
+};
+
+@mixin large-desktop {
+    @media only screen and (min-width: $large-desktop-width){
+        @content
+    }
+};

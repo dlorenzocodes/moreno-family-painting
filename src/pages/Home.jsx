@@ -70,6 +70,7 @@ function Home() {
                     variants={growVarient}
                     initial='hidden'
                     animate='visible'
+                    className='section-info'
                 >
                     <h2>How we can serve you</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur 
@@ -127,6 +128,7 @@ function Home() {
                         variants={growVarient}
                         initial='hidden'
                         animate='visible'
+                        className='section-info'
                 >
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                         sed do eiusmod tempor incididunt ut labore  et dolore </p>

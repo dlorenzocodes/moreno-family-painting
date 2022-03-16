@@ -12,9 +12,22 @@ $ub-bold-weight: 700;
 // Sections
 $section-title-size: 0.9375rem;
 
+// Linear-Gradient
+$background-mobile-gradient: rgba(217, 196, 196, 0.85);
+$background-gradient: rgba(217, 196, 196, 0.25);
+
+
 // Colors
 $accent-color: #F05241;
 $primary-color: #E5E5E5;
 $text-color: #232222;
 $gradient-color: #D9C4C4;
 
+// Media Queries
+$iphoneSE-width: 23.4375em;               // 375px
+// $phone-width: 30em;                      // 480px
+$tablet-width: 37.5em;                  // 768px
+$ipad-width: 64em;                     // 1024px
+$ipad-height: 85.375em;               // 1366px
+$desktop-width: 76.5em;              // 1224px
+$large-desktop-width: 114em;        // 1824px

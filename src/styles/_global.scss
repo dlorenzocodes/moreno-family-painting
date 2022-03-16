@@ -1,0 +1,158 @@
+@import 'mixin.scss';
+
+// Resets
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: $tw-font-family;
+}
+
+h1{
+    font-family: $ub-font-family;
+    font-size: 1.8rem;
+    font-weight: $ub-bold-weight;
+    @include tablet{
+        font-size: 2.1rem;
+    }
+}
+
+h2{
+    font-family: $ub-font-family;
+    font-size: $section-title-size;
+    text-transform: uppercase;
+    font-weight: $ub-bold-weight;
+    @include tablet{
+        font-size: 1.1rem;
+    }
+}
+
+p{
+    font-weight: $tw-regular-weight;
+    font-size: 0.75rem;
+    @include tablet{
+        font-size: .85rem;
+    }
+}
+
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+button{
+    background-color: #F05241;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    cursor: pointer;
+    @include tablet{
+        font-size: 0.9rem;
+    }
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+.headline-section{
+    height: 242px;
+    @include tablet{
+        height: 340px;
+    }
+}
+
+.title-wrapper{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 464px;
+    margin: 0 auto;
+    @include tablet{
+        margin: 0 auto 0 3rem;
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+.headline-cta{
+    font-size: 0.75rem;
+    font-family: $tw-font-family;
+    font-weight: $tw-regular-weight;
+    background-color: $accent-color;
+    padding: 0.5rem 0.75rem;     
+    border-radius: 5px; 
+    color: #fff;
+    transition: all 300ms ease-in-out;
+    text-transform: uppercase;
+}
+
+.headline-cta:hover{
+    background-color: transparent;
+    border: 1px solid $accent-color;
+    color: $text-color
+}
+
+.images-container{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 2.125rem;
+    @include tablet{
+        padding: 2.125rem 0
+    }
+
+    .images-list{
+        
+        padding: 0 1rem;
+        @include tablet{
+           @include grid($grid-template-columns: 1fr 1fr, $grid-gap: 2rem);
+        }
+
+        li{
+            padding-bottom: 2.125rem;
+            @include tablet{
+                padding-bottom: 0;
+            }
+
+            .image-wrapper{
+                height: 139px;
+                border-radius: 5px;
+                min-height: 200px;
+            }
+        }
+    }
+}
+
+
+// Override Toast Styles
+
+.Toastify__toast{
+    font-family: $tw-font-family !important;
+}
+
+.Toastify__progress-bar--success{
+    background: #ffb8b0 !important;
+}
+
+.Toastify__toast-icon > svg{
+    fill: #ffb8b0 !important;
+}
+
