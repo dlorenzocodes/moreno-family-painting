@@ -25,7 +25,7 @@ function Footer() {
 
                 <div className='copyright'>
                     <img onClick={scrollToTop} src={MFPLogo} alt='moreno family logo'/>
-                    <p>&copy; 2022 by Mario Family Painting</p>
+                    <p>&copy; {new Date().getFullYear()} by Mario Family Painting</p>
                 </div>
             </div>
         </footer>

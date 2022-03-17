@@ -17,6 +17,17 @@ main{
                 background-size: 1196px;
                 background-position: -189px -50px;
             }
+            @include ipad{
+                background-position: -189px -89px;
+                background-size: 1375px;
+            }
+            @include desktop{
+                background-size: 156%;
+                background-position: -436px -206px;
+            }
+            @include large-desktop{
+                background-position: -562px -361px;
+            }
 
             .title-wrapper{
                 h3{
@@ -28,6 +39,10 @@ main{
                     @include tablet{
                         font-size: 0.85rem;
                     }
+                    @include desktop{
+                        font-size: 1rem;
+                        padding: 1.5rem 0;
+                    }
                 }
             }
         }
@@ -36,10 +51,18 @@ main{
             background-color: $primary-color;
             padding: 3rem 0;
             text-align: center;
+            @include ipad {
+                padding: 4rem 0;
+            }
 
             .section-info{  
                 width: calc(85% - 2rem);
                 margin: 0 auto;   
+                @include ipad{
+                    width: calc(60% - 2rem);
+                    max-width: 640px;
+                }
+
             }
 
             p{
@@ -59,7 +82,13 @@ main{
                         @include grid($grid-template-columns: 1fr 1fr, $grid-gap: 2rem);
                         width: 85%;
                         margin: 0 auto;
+                        max-width: 640px;
                     }
+                    @include ipad{
+                        @include grid($grid-template-columns: repeat(3, 1fr), $grid-gap: 2rem);
+                        max-width: 1000px;
+                    }
+                    
 
                     .service-item{
                         border: 1px solid $accent-color;

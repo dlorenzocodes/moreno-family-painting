@@ -10,6 +10,17 @@
     @include small-screen{
         min-height: 38vh;
     }
+    @include ipad{
+        padding: 4rem 3rem;
+        height: 30vh;
+        min-height: 30vh;
+    }
+    @include desktop{
+        padding: 7rem 3rem;
+        height: 40vh;
+        max-height: 40vh;
+        max-width: 730px;
+    }
 
     .arrows-container{
         padding: 0.5rem;

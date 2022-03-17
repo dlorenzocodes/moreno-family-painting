@@ -7,10 +7,36 @@
     @include tablet{
         width: 61%;
     }
+    @include ipad{
+        display: flex;
+        width: auto;
+        padding: 0;
+        margin: 0;
+    }
+
+    @include desktop{
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 3rem 1rem;
+    }
+    
 
     .about-info-wrapper{
         p{
             padding: 0.8125rem 0 2.25rem;
+        }
+        @include ipad{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            padding: 0 5rem;
+        }
+
+        @include desktop{
+            padding-left: 0;
+            padding-right: 4rem;
         }
     }
 
@@ -21,6 +47,11 @@
         margin: 0 auto;
         @include tablet{
             height: 385px;
+        }
+        @include ipad{
+            height: 450px;
+            width: 45%;
+            flex: 1 0 auto;
         }
     }
 }
