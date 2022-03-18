@@ -81,6 +81,33 @@ button{
     position: relative;
 }
 
+.headline-home-section,
+.headline-gallery-section{
+    background-image: url('../assets/heroImage.jpg');
+    background-image: linear-gradient( $background-mobile-gradient, $background-mobile-gradient), url('../assets/heroImage.jpg');
+    background-position: -288px top;
+    background-size: 977px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    @include tablet {
+        background-image: linear-gradient( $background-gradient, $background-gradient), url('../assets/heroImage.jpg');
+        background-size: 1196px;
+        background-position: -189px -50px;
+    }
+    @include ipad{
+        background-position: -189px -89px;
+        background-size: 1375px;
+    }
+    @include desktop{
+        background-size: 156%;
+        background-position: -436px -206px;
+    }
+    @include large-desktop{
+        background-position: -562px -361px;
+    }
+}
+
 .headline-section{
     height: 242px;
     @include tablet{

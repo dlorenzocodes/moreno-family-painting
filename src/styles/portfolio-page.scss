@@ -2,11 +2,13 @@
 .content-wrapper{
     
     .headline-gallery-section{
-        background-image: url('../assets/heroImage.jpg');
-        background-image: linear-gradient( rgba(217, 196, 196, 0.85), rgba(217, 196, 196, 0.85)), url('../assets/heroImage.jpg');
-        background-position: -288px;
-        background-size: 977px;
-        background-repeat: no-repeat;
+        .title-wrapper{
+            h1{
+                @include tablet{
+                    font-size: 3.2rem;
+                }
+            }
+        }
     }
 
     .images-section-wrapper{
@@ -41,6 +43,9 @@
 
         .load-more-btn {
             border-radius: 5px;
+            @include tablet{
+                margin-top: 2.125rem;
+            }
         }
 
         .load-more-btn.hidden{
