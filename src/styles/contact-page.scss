@@ -2,10 +2,24 @@
 .headline-contact-section{
     background-image: url('../assets/contact-image.jpg');
     background-repeat: no-repeat;
-    background-size: 465px;
-    background-position: center -307px;
-
+    background-position: right -633px bottom -218px;
+    background-attachment: fixed;
+    @include desktop{
+        background-position: right -240px bottom -315px;
+    }
+    
     .title-wrapper{
+        background-color: rgba(255, 250, 250, 0.6);
+        max-width: none;
+        @include tablet{
+            align-items: center;
+            text-align: center;
+            max-width: none;
+            margin: 0 auto;
+        }
+        @include desktop{
+            padding-top: 4rem;
+        }
 
         h1{
             color: $accent-color;
@@ -17,11 +31,26 @@
     padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
+    max-width: 1050px;
+    margin: 0 auto;
+    @include tablet{
+        padding-top: 4rem;
+    }
+    @include ipad{
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 6rem 5rem;
+    }
 
     .contact-info{
         align-self: center;
         text-align: center;
         margin-bottom: 3rem;
+        @include ipad{
+            align-self: flex-start;
+            text-align: left;
+            flex: 1 0 auto;
+        }
         
         h2{
             margin-bottom: 0.9rem;
@@ -35,6 +64,12 @@
     }
 
     form{
+        @include tablet{
+            margin: 0 auto;
+        }
+        @include ipad{
+            width: 70%;
+        }
 
         .name-inputs{
             display: flex;
@@ -53,6 +88,11 @@
 
             #input-lastname{
                 margin-left: 0.25rem;
+            }
+
+            #input-name,
+            #input-lastname{
+                width: 100%;
             }
 
             #lastname,
@@ -90,12 +130,19 @@
         .project-options{
             border: none;
             margin-bottom: 1rem;
+            @include ipad{
+                @include grid($grid-template-columns: repeat(3, 1fr));
+                margin-bottom: 1.5rem;
+            }
 
             legend{
                 text-transform: uppercase;
                 font-weight: $tw-semibold-wight;
                 font-size: 0.9rem;
                 margin-bottom: 0.5rem;
+                @include ipad{
+                    margin-bottom: 1rem;
+                }
 
                 span{
                     font-size: 0.6rem;
@@ -108,6 +155,9 @@
                 display: flex;
                 align-items: center;
                 padding-bottom: 0.8rem;
+                @include ipad{
+                    padding-bottom: 0;
+                }
 
                 input[type='checkbox']{
 

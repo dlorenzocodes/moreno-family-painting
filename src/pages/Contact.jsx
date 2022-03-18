@@ -1,4 +1,5 @@
 import DOMPurify from 'dompurify';
+import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
@@ -52,14 +53,39 @@ function Contact() {
         
     }
 
+    const variant = {
+        hidden: { opacity: 0, x: '100vw'}, 
+        visible: { 
+            opacity: 1, 
+            x: 0,
+            transition: { 
+                type: 'tween',
+                ease: 'easeInOut',
+                duration: 1,
+            } 
+        }
+    }
+
 
     return (
         <div className='content-wrapper'>
 
             <section className='headline-section headline-contact-section'>
                 <div className="title-wrapper">
-                    <h1>Ready for a fresh coat?</h1>
-                    <h1>send us a note</h1>
+                    <motion.h1
+                        variants={variant}
+                        initial='hidden'
+                        animate='visible'
+                    >
+                        Ready for a fresh coat?
+                    </motion.h1>
+                    <motion.h1
+                        variants={variant}
+                        initial='hidden'
+                        animate='visible'
+                    >
+                        send us a note
+                    </motion.h1>
                 </div>
             </section>
 
@@ -172,7 +198,12 @@ function Contact() {
                         value={message}
                         onChange={handleForm}
                     />
-                    <button type='submit'>Send</button>
+                    <motion.button 
+                        type='submit'
+                        whileHover={{ scale: 1.1, borderRadius: '5px'}}
+                    >
+                        Send
+                    </motion.button>
                 </form>
                 <ToastContainer/>
             </section>
