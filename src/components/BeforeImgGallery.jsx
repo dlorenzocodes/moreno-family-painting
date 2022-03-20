@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import GalleryItem from './GalleryItem'
 import { useContext, useState } from 'react'
 import URLContext from '../context/URLContext'
+import Spinner from '../components/Spinner'
 
 
 function BeforeImgGallery() {
@@ -21,7 +22,7 @@ function BeforeImgGallery() {
         }
     }
 
-    if(loading) return <p>Loading...</p>
+    if(loading) return <Spinner />
 
     return (
         <>

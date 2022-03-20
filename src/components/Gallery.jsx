@@ -4,13 +4,14 @@ import { motion } from 'framer-motion'
 import GalleryItem from './GalleryItem'
 import { Link } from 'react-router-dom'
 import URLContext from '../context/URLContext'
+import Spinner from '../components/Spinner'
 
 function Gallery() {
 
     const { loading, afterImgUrls } = useContext(URLContext)
 
 
-    if(loading) return <p>Loading...</p>
+    if(loading) return <Spinner />
 
     return (
         <section  id='gallery' className='gallery-container'>

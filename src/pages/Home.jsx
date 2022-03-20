@@ -4,6 +4,10 @@ import Button from '../components/Button'
 import Reviews from '../components/Reviews'
 import Gallery from '../components/Gallery'
 import AboutUs from '../components/AboutUs'
+import { MdDoorSliding } from 'react-icons/md'
+import { FaBuilding, FaTools } from 'react-icons/fa'
+import {ReactComponent as DeckIcon} from '../assets/deck.svg'
+import {ReactComponent as ExteriorIcon} from '../assets/exterior.svg'
 
 
 function Home() {
@@ -90,33 +94,65 @@ function Home() {
                         animate='onscreen'
                     >
 
-                        <motion.div className='service-item' variants={serviceVarient}>
+                        <motion.div 
+                            className='service-item' 
+                            variants={serviceVarient}
+                            whileHover={{ scale: 1.1}}
+                        >
                             <IoHome />
                             <h3>Interior Painting</h3>
                         </motion.div>
 
-                        <motion.div className='service-item' variants={serviceVarient}>
-                            <IoHome />
+                        <motion.div 
+                            className='service-item' 
+                            variants={serviceVarient}
+                            whileHover={{ scale: 1.1}}
+                        >
+                            <ExteriorIcon 
+                                fill='#F05241'
+                                width='1em'
+                                height='1em'
+                            />
                             <h3>Exterior Painting</h3>
                         </motion.div>
 
-                        <motion.div className='service-item' variants={serviceVarient}>
-                            <IoHome />
+                        <motion.div 
+                            className='service-item' 
+                            variants={serviceVarient}
+                            whileHover={{ scale: 1.1}}
+                        >
+                            <MdDoorSliding />
                             <h3>Cabinet Painting</h3>
                         </motion.div>
 
-                        <motion.div className='service-item' variants={serviceVarient}>
-                            <IoHome />
+                        <motion.div 
+                            className='service-item' 
+                            variants={serviceVarient}
+                            whileHover={{ scale: 1.1}}
+                        >
+                            <DeckIcon 
+                                fill='#F05241'
+                                width='1em'
+                                height='1em'
+                            />
                             <h3>Decks</h3>
                         </motion.div>
 
-                        <motion.div className='service-item' variants={serviceVarient}>
-                            <IoHome />
+                        <motion.div 
+                            className='service-item' 
+                            variants={serviceVarient}
+                            whileHover={{ scale: 1.1}}
+                        >
+                            <FaTools />
                             <h3>Minor Repairs</h3>
                         </motion.div>
 
-                        <motion.div className='service-item' variants={serviceVarient}>
-                            <IoHome />
+                        <motion.div 
+                            className='service-item' 
+                            variants={serviceVarient}
+                            whileHover={{ scale: 1.1}}
+                        >
+                            <FaBuilding />
                             <h3>Commercial Painting</h3>
                         </motion.div>
 

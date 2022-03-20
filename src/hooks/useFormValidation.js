@@ -16,18 +16,17 @@ export const useFormValidation = () => {
             phone === ''
         ){
             setError({ msg: 'All required fields must be filled in!' })
-            return
+            return false
         } else if( 
             letters.test(name) === false|| 
             letters.test(lastname) === false ||
             phoneRegex.test(phone) === false
         ){
             setError({ msg: 'Some fields are invalid!'})
-            return
+            return false
         } else{
-            setError({
-                msg: null
-            })
+            setError({ msg: null })
+            return true
         }
     }
 

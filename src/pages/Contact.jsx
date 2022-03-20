@@ -1,6 +1,6 @@
 import DOMPurify from 'dompurify';
 import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { useFormValidation } from '../hooks/useFormValidation'
@@ -18,23 +18,7 @@ function Contact() {
 
     const { name, lastname, email, phone, message } = formData
 
-    const { validateForm, error} = useFormValidation()
-
-    const [isSent, setIsSent] = useState(false)
-
-    useEffect(() => {
-        if(isSent){
-            toast.success('Thank you for your submission. We will contact you shortly!')
-            setFormData({
-                name: '',
-                lastname: '',
-                email: '',
-                phone: '',
-                message: '',
-            })
-        } 
-
-    }, [isSent])
+    const { validateForm, error } = useFormValidation()
 
     const handleForm = (e) => {
         setFormData((prevState) => ({
@@ -45,19 +29,31 @@ function Contact() {
 
     const handleSubmitForm = (e) => {
         e.preventDefault()
-        validateForm(name, lastname, email, phone)
-        const cleanMessage = DOMPurify.sanitize(message, {FORBID_TAGS: ['img', 'a', 'script', 'svg']})
-        formData.message = cleanMessage
-        console.log(formData)
-        setIsSent(true)
-        
+        const isValid = validateForm(name, lastname, email, phone)
+        console.log(isValid)
+
+        if(!isValid){
+            e.preventDefault()
+        } else{
+            const cleanMessage = DOMPurify.sanitize(message, {FORBID_TAGS: ['img', 'a', 'script', 'svg']})
+            formData.message = cleanMessage
+            console.log('form submitted')
+            console.log(formData)
+            toast.success('Thank you for your submission. We will contact you shortly!')
+            setFormData({
+                name: '',
+                lastname: '',
+                email: '',
+                phone: '',
+                message: '',
+            })
+        }
     }
 
     const variant = {
-        hidden: { opacity: 0, x: '100vw'}, 
+        hidden: { opacity: 0}, 
         visible: { 
             opacity: 1, 
-            x: 0,
             transition: { 
                 type: 'tween',
                 ease: 'easeInOut',
@@ -99,14 +95,12 @@ function Contact() {
                     </div>
                 </div>
 
-                {error.msg != null ? <p className='error'>{error.msg}</p> : null}
-
                 <form 
                     name='contact' 
                     method='POST' 
                     onSubmit={handleSubmitForm}
                 >
-
+                    {error.msg !== null ? <p className='error'>{error.msg}</p> : null}
                     <fieldset className='name-inputs'>
                         <div id='input-name'>
                             <label htmlFor='name'>Name: *</label>
