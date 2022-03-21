@@ -53,7 +53,7 @@ function Contact() {
                         lastname: '',
                         email: '',
                         phone: '',
-                        message: '',
+                        message: ''
                     })
                 )
                 .catch( error => toast.error(error))
@@ -165,32 +165,62 @@ function Contact() {
                         <legend>Tell us about your Project <span>(Opt.)</span> : </legend>
                         
                         <div>
-                            <input type='checkbox' id='interior' name='interior'/>
+                            <input 
+                                type='checkbox' 
+                                id='interior' 
+                                name='interior' 
+                                value='interior'
+                            />
                             <label htmlFor='interior'>Interior Painting</label>
                         </div>
 
                         <div>
-                            <input type='checkbox' id='exterior' name='exterior'/>
+                            <input 
+                                type='checkbox' 
+                                id='exterior' 
+                                name='exterior' 
+                                value='exterior'
+                            />
                             <label htmlFor='exterior'>Exterior Painting</label>
                         </div>
 
                         <div>
-                            <input type='checkbox' id='cabinet' name='cabinet'/>
+                            <input 
+                                type='checkbox' 
+                                id='cabinet' 
+                                name='cabinet' 
+                                value='cabinet'
+                            />
                             <label htmlFor='cabinet'>Cabinet Painting</label>
                         </div>
 
                         <div>
-                            <input type='checkbox' id='deck' name='deck'/>
+                            <input 
+                                type='checkbox' 
+                                id='deck' 
+                                name='deck'
+                                value='deck'
+                            />
                             <label htmlFor='deck'>Deck</label>
                         </div>
                         
                         <div>
-                            <input type='checkbox' id='repairs' name='repairs'/>
+                            <input 
+                                type='checkbox' 
+                                id='repairs' 
+                                name='repairs'
+                                value='repairs'
+                            />
                             <label htmlFor='repairs'>Minor Repairs</label>
                         </div>
 
                         <div>
-                            <input type='checkbox' id='commercial' name='commercial'/>
+                            <input  
+                                type='checkbox' 
+                                id='commercial' 
+                                name='commercial'
+                                value='commercial'
+                            />
                             <label htmlFor='commercial'>Commercial Painting</label>
                         </div>
 
