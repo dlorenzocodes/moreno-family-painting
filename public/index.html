@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -31,6 +31,19 @@
     <title>Moreno Family Painting</title>
   </head>
   <body>
+    <form name="contact" netlify netlify-honeypot="bot-field"  hidden>
+      <input type='text' name='name'/>
+      <input type='text' name='lastname'/>
+      <input type='email' name='email'/>
+      <input type='phone' name='phone'/>
+      <input type='checkbox' name='interior'/>
+      <input type='checkbox' name='exterior'/>
+      <input type='checkbox' name='cabinet'/>
+      <input type='checkbox' name='deck'/>
+      <input type='checkbox' name='repairs'/>
+      <input type='checkbox' name='commercial'/>
+      <textarea name='message'></textarea>
+    </form>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--

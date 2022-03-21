@@ -27,26 +27,36 @@ function Contact() {
         }))
     }
 
+    const encode = (data) => {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&");
+      }
+
     const handleSubmitForm = (e) => {
         e.preventDefault()
         const isValid = validateForm(name, lastname, email, phone)
-        console.log(isValid)
 
         if(!isValid){
             e.preventDefault()
         } else{
             const cleanMessage = DOMPurify.sanitize(message, {FORBID_TAGS: ['img', 'a', 'script', 'svg']})
             formData.message = cleanMessage
-            console.log('form submitted')
-            console.log(formData)
-            toast.success('Thank you for your submission. We will contact you shortly!')
-            setFormData({
-                name: '',
-                lastname: '',
-                email: '',
-                phone: '',
-                message: '',
+            fetch('/', {
+                method:'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
+                body: encode({ 'form-name': 'contact', ...formData})
             })
+                .then(() =>  toast.success('Thank you for your submission. We will contact you shortly!'))
+                .then(() =>  setFormData({
+                        name: '',
+                        lastname: '',
+                        email: '',
+                        phone: '',
+                        message: '',
+                    })
+                )
+                .catch( error => toast.error(error))
         }
     }
 
@@ -98,9 +108,12 @@ function Contact() {
                 <form 
                     name='contact' 
                     method='POST' 
+                    data-netlify="true" 
                     onSubmit={handleSubmitForm}
                 >
                     {error.msg !== null ? <p className='error'>{error.msg}</p> : null}
+
+                    <input type='hidden' name='form-name' value='contact'/>
                     <fieldset className='name-inputs'>
                         <div id='input-name'>
                             <label htmlFor='name'>Name: *</label>
