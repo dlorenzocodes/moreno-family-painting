@@ -4,21 +4,24 @@ import { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { useFormValidation } from '../hooks/useFormValidation'
+import serviceList from '../utils/services.json'
+import { v4 as uuidv4 } from 'uuid';
 
 
 function Contact() {
+
+    const { validateForm, error } = useFormValidation()
 
     const [formData, setFormData] = useState({
         name: '',
         lastname: '',
         email: '',
         phone: '',
-        message: '',
+        message: ''
     })
 
     const { name, lastname, email, phone, message } = formData
-
-    const { validateForm, error } = useFormValidation()
+    
 
     const handleForm = (e) => {
         setFormData((prevState) => ({
@@ -26,6 +29,15 @@ function Contact() {
             [e.target.id]: e.target.value
         }))
     }
+
+    const checkArray = new Array(serviceList.length).fill(false)
+    const [checkbox, setCheckbox] = useState([...checkArray])
+
+    const handleCheckbox = (position, e) => {
+        const checkedService = checkbox.map((item, index) =>  index === position ? !item : item)
+        setCheckbox([...checkedService])
+    }
+
 
     const encode = (data) => {
         return Object.keys(data)
@@ -53,7 +65,7 @@ function Contact() {
                         lastname: '',
                         email: '',
                         phone: '',
-                        message: ''
+                        message: '',
                     })
                 )
                 .catch( error => toast.error(error))
@@ -163,23 +175,31 @@ function Contact() {
 
                     <fieldset className='project-options'>
                         <legend>Tell us about your Project <span>(Opt.)</span> : </legend>
+                        {serviceList.map((item, index) => (
+                            <div key={uuidv4()}>
+                                <input 
+                                    type='checkbox' 
+                                    id={item.service}
+                                    name={item.service}
+                                    value={item.service}
+                                    checked={checkbox[index]}
+                                    onChange={() => handleCheckbox(index)}
+                                />
+                                <label htmlFor={item.service}>
+                                    {item.service === 'Minor Repairs' ? 'Minor Repairs' : `${item.service} Painting`}
+                                </label>
+                            </div>
+                        ))}
                         
-                        <div>
-                            <input 
-                                type='checkbox' 
-                                id='interior' 
-                                name='interior' 
-                                value='interior'
-                            />
-                            <label htmlFor='interior'>Interior Painting</label>
-                        </div>
 
-                        <div>
+                        {/* <div>
                             <input 
                                 type='checkbox' 
                                 id='exterior' 
                                 name='exterior' 
                                 value='exterior'
+                                checked={exterior}
+                                onChange={handleCheckbox}
                             />
                             <label htmlFor='exterior'>Exterior Painting</label>
                         </div>
@@ -190,6 +210,8 @@ function Contact() {
                                 id='cabinet' 
                                 name='cabinet' 
                                 value='cabinet'
+                                checked={cabinet}
+                                onChange={handleCheckbox}
                             />
                             <label htmlFor='cabinet'>Cabinet Painting</label>
                         </div>
@@ -200,6 +222,8 @@ function Contact() {
                                 id='deck' 
                                 name='deck'
                                 value='deck'
+                                checked={deck}
+                                onChange={handleCheckbox}
                             />
                             <label htmlFor='deck'>Deck</label>
                         </div>
@@ -210,6 +234,8 @@ function Contact() {
                                 id='repairs' 
                                 name='repairs'
                                 value='repairs'
+                                checked={repairs}
+                                onChange={handleCheckbox}
                             />
                             <label htmlFor='repairs'>Minor Repairs</label>
                         </div>
@@ -220,9 +246,11 @@ function Contact() {
                                 id='commercial' 
                                 name='commercial'
                                 value='commercial'
+                                checked={commercial}
+                                onChange={handleCheckbox}
                             />
                             <label htmlFor='commercial'>Commercial Painting</label>
-                        </div>
+                        </div> */}
 
                     </fieldset>
 

@@ -1,0 +1,20 @@
+[
+    {
+        "service": "Interior"
+    },
+    {
+        "service": "Exterior"
+    },
+    {
+        "service": "Cabinet"
+    },
+    {
+        "service": "Deck"
+    },
+    {
+        "service": "Minor Repairs"
+    },
+    {
+        "service": "Commercial"
+    }
+]
