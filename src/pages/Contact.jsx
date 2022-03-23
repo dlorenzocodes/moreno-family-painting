@@ -36,6 +36,7 @@ function Contact() {
 
     const getSelectedCheckboxValues = (option) => {
         let value = option.value
+        console.log(typeof value)
         if(option.checked){
             setSelected([...selected, { [value]: value }])
         } else{
@@ -67,7 +68,7 @@ function Contact() {
             const cleanMessage = DOMPurify.sanitize(message, {FORBID_TAGS: ['img', 'a', 'script', 'svg']})
             formData.message = cleanMessage
             const formDataCopy = Object.assign({}, formData, ...selected)
-
+            console.log(formDataCopy)
             try{
 
                 await fetch('/', {
@@ -194,7 +195,7 @@ function Contact() {
                                 <input 
                                     type='checkbox' 
                                     id={item.service}
-                                    name={item.service}
+                                    name={item.service + '[]'}
                                     value={item.service}
                                     checked={checkbox[index]}
                                     onChange={(e) => handleCheckbox(e,index)}
@@ -204,67 +205,6 @@ function Contact() {
                                 </label>
                             </div>
                         ))}
-                        
-
-                        {/* <div>
-                            <input 
-                                type='checkbox' 
-                                id='exterior' 
-                                name='exterior' 
-                                value='exterior'
-                                checked={exterior}
-                                onChange={handleCheckbox}
-                            />
-                            <label htmlFor='exterior'>Exterior Painting</label>
-                        </div>
-
-                        <div>
-                            <input 
-                                type='checkbox' 
-                                id='cabinet' 
-                                name='cabinet' 
-                                value='cabinet'
-                                checked={cabinet}
-                                onChange={handleCheckbox}
-                            />
-                            <label htmlFor='cabinet'>Cabinet Painting</label>
-                        </div>
-
-                        <div>
-                            <input 
-                                type='checkbox' 
-                                id='deck' 
-                                name='deck'
-                                value='deck'
-                                checked={deck}
-                                onChange={handleCheckbox}
-                            />
-                            <label htmlFor='deck'>Deck</label>
-                        </div>
-                        
-                        <div>
-                            <input 
-                                type='checkbox' 
-                                id='repairs' 
-                                name='repairs'
-                                value='repairs'
-                                checked={repairs}
-                                onChange={handleCheckbox}
-                            />
-                            <label htmlFor='repairs'>Minor Repairs</label>
-                        </div>
-
-                        <div>
-                            <input  
-                                type='checkbox' 
-                                id='commercial' 
-                                name='commercial'
-                                value='commercial'
-                                checked={commercial}
-                                onChange={handleCheckbox}
-                            />
-                            <label htmlFor='commercial'>Commercial Painting</label>
-                        </div> */}
 
                     </fieldset>
 
