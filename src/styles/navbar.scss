@@ -92,14 +92,15 @@
                 flex-direction: row;
                 box-shadow: none;
             }
-        
+
             li{
                 padding: 1.3125rem 0;
                 text-transform: uppercase;
                 font-size: 0.875rem;
                 font-weight: $tw-regular-weight;
                 color: $text-color;
-                border-bottom: 1px solid #F5F5F5;
+                border-bottom: 1px solid $border-bottom;
+                --webkit-border-bottom: 1px solid rgba(245, 245, 245, 1);
                 width: 100%;
                 text-align: center;
                 cursor: pointer;

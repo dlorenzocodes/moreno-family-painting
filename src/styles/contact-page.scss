@@ -112,6 +112,8 @@
             width: 100%;
             margin-bottom: 1.5rem;
             border: 1px solid $accent-color;
+            --webkit-border-radius: 0px;
+            --moz-border-radius: 0px;
             font-family: $tw-font-family;
             resize: vertical;
 
