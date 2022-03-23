@@ -14,7 +14,7 @@ body{
 
 h1{
     font-family: $ub-font-family;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     font-weight: $ub-bold-weight;
     @include tablet{
         font-size: 2.1rem;
@@ -42,10 +42,10 @@ h2{
 
 p{
     font-weight: $tw-regular-weight;
-    font-size: 0.75rem;
-    @include tablet{
-        font-size: .85rem;
-    }
+    font-size: 0.9rem;
+    // @include tablet{
+    //     font-size: .85rem;
+    // }
 }
 
 
