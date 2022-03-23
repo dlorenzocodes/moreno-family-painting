@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
+import * as Scroll from 'react-scroll'
 import { Link } from 'react-router-dom'
 import MFPLogo from '../assets/MFPLogo.png'
-import * as Scroll from 'react-scroll'
 
 function Footer() {
 

@@ -12,7 +12,7 @@ export const URLProvider = ({children}) => {
     const [afterImgUrls, setAfterImgUrls] = useState([])
     const [loading, setLoading] = useState(true)
 
-    // 
+
     useEffect(() => {
         const getImagesName = async () => {
             try{

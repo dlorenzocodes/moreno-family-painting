@@ -1,11 +1,11 @@
-import DOMPurify from 'dompurify';
-import { motion } from 'framer-motion'
 import { useState } from 'react'
+import DOMPurify from 'dompurify';
+import { v4 as uuidv4 } from 'uuid';
+import { motion } from 'framer-motion'
+import serviceList from '../utils/services.json'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { useFormValidation } from '../hooks/useFormValidation'
-import serviceList from '../utils/services.json'
-import { v4 as uuidv4 } from 'uuid';
 
 
 function Contact() {
@@ -22,7 +22,7 @@ function Contact() {
 
     const { name, lastname, email, phone, message } = formData
     
-
+    // handles contact from info
     const handleForm = (e) => {
         setFormData((prevState) => ({
             ...prevState,
@@ -44,6 +44,7 @@ function Contact() {
         }
     }
 
+    // handles contact from checkboxes
     const handleCheckbox = (e, position) => {
         const checkedServicesState = checkbox.map((item, index) =>  index === position ? !item : item)
         setCheckbox([...checkedServicesState])
@@ -76,7 +77,7 @@ function Contact() {
                     body: encode({ 'form-name': 'contact', ...formDataCopy})
                 })
                 
-                toast.success('Thank you for your submission. We will contact you shortly!')
+                toast.success('Thank you for your message. We will contact you within 24 hours!')
                 setFormData({ name: '', lastname: '', email: '', phone: '', message: ''})
                 setCheckbox([...checkboxStates])
                 setSelected([])

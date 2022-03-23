@@ -63,9 +63,6 @@ function Reviews() {
         slideBackwards([...reviewList])
     }
 
-  
-   
-
     const slideForward = (listRef) => {
         const activeReview = listRef.filter((review) => review.classList.value === 'review-item active')
         const lastReview = listRef[listRef.length - 1]

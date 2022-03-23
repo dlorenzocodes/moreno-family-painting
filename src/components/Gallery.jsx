@@ -3,13 +3,12 @@ import { v4 as uuidv4 } from 'uuid';
 import { motion } from 'framer-motion'
 import GalleryItem from './GalleryItem'
 import { Link } from 'react-router-dom'
-import URLContext from '../context/URLContext'
 import Spinner from '../components/Spinner'
+import URLContext from '../context/URLContext'
 
 function Gallery() {
 
     const { loading, afterImgUrls } = useContext(URLContext)
-
 
     if(loading) return <Spinner />
 

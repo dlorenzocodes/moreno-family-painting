@@ -22,29 +22,18 @@ function NavBar() {
    let style = { height: `${height}`, display: `${display}`}
  
     useEffect(() => {
-
         if(isOpen){
-
             setDisplay('flex')
             const navBarHeight = navHight.current.clientHeight + 'px'
-
             setTimeout(() => { setHeight(navBarHeight) }, 50)
-
             setHeight(0)
-
         } else{
-
             setHeight(0)
-
             setTimeout(() => {
                 setHeight('auto')
                 setDisplay('')
             }, 300)
-
         }
-
-        
-
     }, [isOpen])
 
 
