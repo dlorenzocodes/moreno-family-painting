@@ -36,7 +36,6 @@ function Contact() {
 
     const getSelectedCheckboxValues = (option) => {
         let value = option.value
-        console.log(typeof value)
         if(option.checked){
             setSelected([...selected, { [value]: value }])
         } else{
@@ -68,7 +67,7 @@ function Contact() {
             const cleanMessage = DOMPurify.sanitize(message, {FORBID_TAGS: ['img', 'a', 'script', 'svg']})
             formData.message = cleanMessage
             const formDataCopy = Object.assign({}, formData, ...selected)
-            console.log(formDataCopy)
+            
             try{
 
                 await fetch('/', {
@@ -195,7 +194,7 @@ function Contact() {
                                 <input 
                                     type='checkbox' 
                                     id={item.service}
-                                    name={item.service + '[]'}
+                                    name={item.service}
                                     value={item.service}
                                     checked={checkbox[index]}
                                     onChange={(e) => handleCheckbox(e,index)}
