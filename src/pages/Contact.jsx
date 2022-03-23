@@ -30,12 +30,24 @@ function Contact() {
         }))
     }
 
-    const checkArray = new Array(serviceList.length).fill(false)
-    const [checkbox, setCheckbox] = useState([...checkArray])
+    const checkboxStates = new Array(serviceList.length).fill(false)
+    const [checkbox, setCheckbox] = useState([...checkboxStates])
+    const [selected, setSelected] = useState([])
 
-    const handleCheckbox = (position, e) => {
-        const checkedService = checkbox.map((item, index) =>  index === position ? !item : item)
-        setCheckbox([...checkedService])
+    const getSelectedCheckboxValues = (option) => {
+        let value = option.value
+        if(option.checked){
+            setSelected([...selected, { [value]: value }])
+        } else{
+            const index = selected.findIndex(item => item[value] === value )
+            selected.splice(index, 1)
+        }
+    }
+
+    const handleCheckbox = (e, position) => {
+        const checkedServicesState = checkbox.map((item, index) =>  index === position ? !item : item)
+        setCheckbox([...checkedServicesState])
+        getSelectedCheckboxValues(e.target)
     }
 
 
@@ -45,7 +57,7 @@ function Contact() {
             .join("&");
       }
 
-    const handleSubmitForm = (e) => {
+    const handleSubmitForm = async(e) => {
         e.preventDefault()
         const isValid = validateForm(name, lastname, email, phone)
 
@@ -54,21 +66,22 @@ function Contact() {
         } else{
             const cleanMessage = DOMPurify.sanitize(message, {FORBID_TAGS: ['img', 'a', 'script', 'svg']})
             formData.message = cleanMessage
-            fetch('/', {
-                method:'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
-                body: encode({ 'form-name': 'contact', ...formData})
-            })
-                .then(() =>  toast.success('Thank you for your submission. We will contact you shortly!'))
-                .then(() =>  setFormData({
-                        name: '',
-                        lastname: '',
-                        email: '',
-                        phone: '',
-                        message: '',
-                    })
-                )
-                .catch( error => toast.error(error))
+            const formDataCopy = Object.assign({}, formData, ...selected)
+
+            try{
+                const response = await fetch('/', {
+                    method:'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
+                    body: encode({ 'form-name': 'contact', ...formDataCopy})
+                })
+                
+                toast.success('Thank you for your submission. We will contact you shortly!')
+                setFormData({ name: '', lastname: '', email: '', phone: '', message: ''})
+                setCheckbox([...checkboxStates])
+                setSelected([])
+            }catch(error){
+                toast.error(error.message)
+            }
         }
     }
 
@@ -183,7 +196,7 @@ function Contact() {
                                     name={item.service}
                                     value={item.service}
                                     checked={checkbox[index]}
-                                    onChange={() => handleCheckbox(index)}
+                                    onChange={(e) => handleCheckbox(e,index)}
                                 />
                                 <label htmlFor={item.service}>
                                     {item.service === 'Minor Repairs' ? 'Minor Repairs' : `${item.service} Painting`}
