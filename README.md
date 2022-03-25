@@ -36,7 +36,7 @@ You may also see any lint errors in the console.
 
     Images by [Pexels](https://www.pexels.com/)
     Icons by React-Icons
-    &copy;All rights reserved. 
+    ©All rights reserved. 
 
 
 
