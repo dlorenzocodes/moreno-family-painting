@@ -108,6 +108,7 @@ function Home() {
                             className='service-item' 
                             variants={serviceVarient}
                             whileHover={{ scale: 1.1}}
+                            whileTap={{scale: 1.1 }}
                         >
                             <ExteriorIcon 
                                 fill='#F05241'
@@ -121,6 +122,7 @@ function Home() {
                             className='service-item' 
                             variants={serviceVarient}
                             whileHover={{ scale: 1.1}}
+                            whileTap={{scale: 1.1 }}
                         >
                             <MdDoorSliding />
                             <h3>Cabinet Painting</h3>
@@ -129,7 +131,8 @@ function Home() {
                         <motion.div 
                             className='service-item' 
                             variants={serviceVarient}
-                            whileHover={{ scale: 1.1}}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{scale: 1.1 }}
                         >
                             <DeckIcon 
                                 fill='#F05241'
@@ -142,7 +145,8 @@ function Home() {
                         <motion.div 
                             className='service-item' 
                             variants={serviceVarient}
-                            whileHover={{ scale: 1.1}}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{scale: 1.1 }}
                         >
                             <FaTools />
                             <h3>Minor Repairs</h3>
@@ -151,7 +155,8 @@ function Home() {
                         <motion.div 
                             className='service-item' 
                             variants={serviceVarient}
-                            whileHover={{ scale: 1.1}}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{scale: 1.1 }}
                         >
                             <FaBuilding />
                             <h3>Commercial Painting</h3>

@@ -134,13 +134,14 @@ button{
     text-align: center;
     max-width: 464px;
     margin: 0 auto;
+    padding: 0 1rem;
     @include tablet{
         margin: 0 auto 0 3rem;
         align-items: flex-start;
         text-align: left;
     }
     @include ipad{
-        padding-top: 6rem;
+        padding: 6rem 0 0;
     }
 
     @include desktop{
