@@ -116,6 +116,7 @@
             --webkit-appearance: none;
             font-family: $tw-font-family;
             resize: vertical;
+            font-size: $base;
 
             &::placeholder{
                 color: $primary-color;

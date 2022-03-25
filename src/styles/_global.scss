@@ -57,9 +57,9 @@ button{
     background-color: #F05241;
     border: none;
     color: #fff;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1.5rem;
     text-transform: uppercase;
-    font-size: $button-font-size;
+    font-size: $base;
     cursor: pointer;
     @include tablet{
         font-size: 1rem;
@@ -216,6 +216,7 @@ button{
 
 .Toastify__toast{
     font-family: $tw-font-family !important;
+    font-size: 1.125rem;
 }
 
 .Toastify__progress-bar--success{
