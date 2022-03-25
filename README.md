@@ -25,18 +25,18 @@ You may also see any lint errors in the console.
 
 ## Technologies
 
-• React
-• React Router DOM
-• Firebase Storage
-• Sass
-• Framer Motion
-• Netlify Forms
+    • React
+    • React Router DOM
+    • Firebase Storage
+    • Sass
+    • Framer Motion
+    • Netlify Forms
 
 ## Credits & License 
 
-Images by [Pexels](https://www.pexels.com/)
-Icons by React-Icons
-&copy;All rights reserved. 
+    Images by [Pexels](https://www.pexels.com/)
+    Icons by React-Icons
+    &copy;All rights reserved. 
 
 
 
