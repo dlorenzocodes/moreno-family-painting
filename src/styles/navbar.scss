@@ -93,18 +93,22 @@
                 box-shadow: none;
             }
 
-
             li{
                 padding: 1.3125rem 0;
                 text-transform: uppercase;
                 font-size: 0.875rem;
                 font-weight: $tw-regular-weight;
                 color: $text-color;
-                border-bottom: 1px solid rgb(245, 245, 245);
                 width: 100%;
                 text-align: center;
                 cursor: pointer;
                 transition: all  300ms ease-in-out;
+                border-bottom: 1px solid rgb(245, 245, 245);
+
+                a{
+                    color: $text-color
+                }
+
                 @include ipad{
                     width: auto;
                     padding: 1rem 2rem;
@@ -118,10 +122,12 @@
                     padding: 1rem 4rem;
                 }
 
+                &:hover  a {
+                    color: #fff;
+                }
 
                 &:hover{
                     background: $accent-color;
-                    color: #fff;
                     @include ipad{
                         transform: scale(1.025);
                     }

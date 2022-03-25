@@ -59,15 +59,11 @@ function NavBar() {
                     style={style}
                 >
                     
-                    <Link to='/'>
-                    <li
-                        className={location.pathname === '/' ? 'hidde' : null }
-                    >
-                        Home
+                    <li className={location.pathname === '/' ? 'hidde' : null }>
+                        <Link id='link-page' to='/'>Home</Link>
                     </li>
-                    </Link>
 
-                    <li className={location.pathname === '/' ? null : 'hidde' }>
+                    <li id='home-link' className={location.pathname === '/' ? null : 'hidde' }>
                         <LinkS 
                             activeClass='active'
                             to='services'
@@ -78,7 +74,7 @@ function NavBar() {
                         </LinkS>
                     </li>
 
-                    <li className={location.pathname === '/' ? null : 'hidde'}>
+                    <li id='home-link' className={location.pathname === '/' ? null : 'hidde'}>
                         <LinkS
                             activeClass='active'
                             to='reviews'
@@ -89,13 +85,13 @@ function NavBar() {
                         </LinkS>
                     </li>
 
-                    <Link to='/our-work'>
-                        <li>
-                            Our Work
-                        </li>
-                    </Link>
+                    
+                    <li>
+                        <Link id='link-page' to='/our-work'>Our Work</Link>
+                    </li>
+                    
                    
-                    <li className={location.pathname === '/' ? null : 'hidde' }>
+                    <li id='home-link' className={location.pathname === '/' ? null : 'hidde' }>
                         <LinkS
                             activeClass='active'
                             to='about-us'
@@ -106,9 +102,11 @@ function NavBar() {
                         </LinkS>
                     </li>
 
-                    <Link to='/contact-us'>
-                    <li>Contact us</li>
-                    </Link>
+                    
+                    <li>
+                        <Link id='link-page' to='/contact-us'>Contact us</Link>
+                    </li>
+                    
                 </ul>
             </div>
         </nav>

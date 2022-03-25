@@ -1,7 +1,9 @@
 import { v4 as uuidv4 } from 'uuid';
+import { useHeight } from '../hooks/useHeight';
 import { MdArrowForwardIos } from 'react-icons/md'
 import { useState, useEffect, useRef } from 'react'
 import { MdOutlineArrowBackIosNew  } from 'react-icons/md'
+import { reviews } from '../utils/reviews'
 
 function Reviews() {
 
@@ -10,56 +12,34 @@ function Reviews() {
     const [slide, setSlide] = useState(null)
     const [diableForwardBtn, setDisableForwardBtn] = useState(false)
     const [diableBackwardBtn, setDisableBackwardBtn] = useState(true)
-    const listRef = useRef()
+    const [height, setHeight] = useState(null)
 
+    const listRef = useRef()
+    const containerRef = useRef()
+    
+    const { resizedHeight, isResized } = useHeight(listRef)
 
     const style = {
-        transform: `translateX(-${slide}px)`
+        transform: `translateX(-${slide}px)`,
+        height: `${ isResized ? resizedHeight : height}px`
+
     }
-
-    const reviews = [
-        {
-            review: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore 
-            et dolore magna aliqua. Ut enim ad minim veniam, 
-            quis nostrud exercitation ullamco laboris nisi ut aliquip 
-            ex ea commodo consequat.`,
-            author: '— Donna Lorenzo'
-        },
-        {
-            review: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore 
-            et dolore magna aliqua.`,
-            author: '— John Doe'
-        },
-        {
-            review: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore 
-            et dolore magna aliqua. Ut enim ad minim veniam, 
-            quis nostrud exercitation ullamco laboris nisi ut aliquip 
-            ex ea commodo consequat.`,
-            author: '— Yoan Lorenzo'
-        }
-
-    ]
-
 
     useEffect(() => {
         const items = listRef.current.children
         const width = items[0].offsetWidth
+        const reviewHeight = items[0].clientHeight
+        setHeight(reviewHeight)
         setPosition(width)
     }, [])
 
-
-    const handleForwardArrow = () => {
+    const handleForwardArrow = (reviewList) => {
         setCurrent(current === reviews.length - 1 ? 0 : current + 1)
-        const reviewList = listRef.current.children
         slideForward([...reviewList])
     }
 
-    const handleBackArrow = () => {
+    const handleBackArrow = (reviewList) => {
         setCurrent(current === 0 ? reviews.length - 1 : current - 1)
-        const reviewList = listRef.current.children
         slideBackwards([...reviewList])
     }
 
@@ -98,20 +78,20 @@ function Reviews() {
         }
     }
 
-   
-
     
-
-    
-
     return (
-        <section  id='reviews' className='reviews-container'>
+        <section  
+            id='reviews' 
+            className='reviews-container' 
+            ref={containerRef}
+            // style={{ height: `${isResized ? resizedHeight : height}`}}
+        >
             <h2>Reviews</h2>
             <div className='arrows-container'>
                 <button 
                     className={diableBackwardBtn ? 'unabled' : null}
                     type='button'
-                    onClick={handleBackArrow}
+                    onClick={() => handleBackArrow(listRef.current.children)}
                     disabled={diableBackwardBtn}
                 >
                     <MdOutlineArrowBackIosNew/>
@@ -119,7 +99,7 @@ function Reviews() {
                 <button
                     className={diableForwardBtn ? 'unabled' : null}
                     type='button'
-                    onClick={handleForwardArrow}
+                    onClick={() => handleForwardArrow(listRef.current.children)}
                     disabled={diableForwardBtn}
                 >
                     <MdArrowForwardIos/>   
