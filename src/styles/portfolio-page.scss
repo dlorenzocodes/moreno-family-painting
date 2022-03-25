@@ -1,15 +1,5 @@
 
 .content-wrapper{
-    
-    .headline-gallery-section{
-        .title-wrapper{
-            h1{
-                @include tablet{
-                    font-size: 3.2rem;
-                }
-            }
-        }
-    }
 
     .images-section-wrapper{
         display: flex;

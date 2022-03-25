@@ -17,14 +17,9 @@ h1{
     font-size: 2rem;
     font-weight: $ub-bold-weight;
     @include tablet{
-        font-size: 2.1rem;
+        font-size: 3.2rem;
     }
-    @include ipad{
-        font-size: 2.3rem;
-    }
-    @include desktop{
-        font-size: 3rem;
-    }
+    
     @include large-desktop{
         font-size: 4rem;
     }
