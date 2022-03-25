@@ -120,7 +120,7 @@
             &::placeholder{
                 color: $primary-color;
                 text-transform: uppercase;
-                font-size: 0.7rem;
+                font-size: $button-font-size;
                 font-family: $tw-font-family;
             }
 
@@ -140,10 +140,10 @@
             legend{
                 text-transform: uppercase;
                 font-weight: $tw-semibold-wight;
-                font-size: 0.9rem;
-                margin-bottom: 0.5rem;
+                font-size: $base;
+                margin-bottom: 1rem;
                 @include ipad{
-                    margin-bottom: 1rem;
+                    margin-bottom: 1.5rem;
                 }
 
                 span{
@@ -184,7 +184,7 @@
 
                 label{
                     margin-left: 0.8rem;
-                    font-size: 0.9rem;
+                    font-size: $base;
                     cursor: pointer;
 
                     &::before{

@@ -33,6 +33,7 @@ function Gallery() {
                     whileInView={{ opacity: 1 }}
                     transition={{type: 'tween', duration: 0.5}}
                     viewport={{ once: true }}
+                    whileTap={{ scale: 1.1 }}
                 >
                     View Recent Work
                 </motion.button>

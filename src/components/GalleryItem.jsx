@@ -28,6 +28,8 @@ function GalleryItem({url}) {
                 variants={variant}
                 initial='hidden'
                 whileInView='visible'
+                whileHover={{ scale: 1.1 }}
+                whileTap={{scale: 1.1 }}
                 viewport={{ once: true }}
             ></motion.div>
         </li>

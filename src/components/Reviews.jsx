@@ -1,9 +1,10 @@
 import { v4 as uuidv4 } from 'uuid';
+import { motion } from 'framer-motion'
+import { reviews } from '../utils/reviews'
 import { useHeight } from '../hooks/useHeight';
 import { MdArrowForwardIos } from 'react-icons/md'
 import { useState, useEffect, useRef } from 'react'
 import { MdOutlineArrowBackIosNew  } from 'react-icons/md'
-import { reviews } from '../utils/reviews'
 
 function Reviews() {
 
@@ -84,26 +85,27 @@ function Reviews() {
             id='reviews' 
             className='reviews-container' 
             ref={containerRef}
-            // style={{ height: `${isResized ? resizedHeight : height}`}}
         >
             <h2>Reviews</h2>
             <div className='arrows-container'>
-                <button 
+                <motion.button 
                     className={diableBackwardBtn ? 'unabled' : null}
                     type='button'
                     onClick={() => handleBackArrow(listRef.current.children)}
                     disabled={diableBackwardBtn}
+                    whileTap={{ scale: 1.1 }}
                 >
                     <MdOutlineArrowBackIosNew/>
-                </button>
-                <button
+                </motion.button>
+                <motion.button
                     className={diableForwardBtn ? 'unabled' : null}
                     type='button'
                     onClick={() => handleForwardArrow(listRef.current.children)}
                     disabled={diableForwardBtn}
+                    whileTap={{ scale: 1.1 }}
                 >
                     <MdArrowForwardIos/>   
-                </button>
+                </motion.button>
             </div>
 
             <div 

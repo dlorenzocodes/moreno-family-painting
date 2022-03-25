@@ -34,9 +34,9 @@
         }
     
         img{
-            width: 6rem;
+            width: 7rem;
             @include tablet{
-                width: 7rem;
+                width: 8rem;
             }
             @include desktop{
                 width: 10rem;
@@ -96,7 +96,7 @@
             li{
                 padding: 1.3125rem 0;
                 text-transform: uppercase;
-                font-size: 0.875rem;
+                font-size: $base;
                 font-weight: $tw-regular-weight;
                 color: $text-color;
                 width: 100%;

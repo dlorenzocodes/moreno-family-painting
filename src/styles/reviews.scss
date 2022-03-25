@@ -2,23 +2,15 @@
 .reviews-container{
     text-align: center;
     padding: 2rem 3rem;
-    // height: 25vh;
-    // min-height: 25vh;
     overflow: hidden;
     max-width: 600px;
     margin: 0 auto;
-    @include small-screen{
-        // min-height: 38vh;
-    }
+  
     @include ipad{
         padding: 4rem 3rem;
-        // height: 30vh;
-        // min-height: 30vh;
     }
     @include desktop{
         padding: 7rem 3rem;
-        // height: 40vh;
-        // max-height: 40vh;
         max-width: 730px;
     }
 
@@ -57,7 +49,7 @@
             span{
                 margin-top: 1rem;
                 display: block;
-                font-size: 0.75rem;
+                font-size: $button-font-size;
             }
         }
 

@@ -97,7 +97,8 @@ function Home() {
                         <motion.div 
                             className='service-item' 
                             variants={serviceVarient}
-                            whileHover={{ scale: 1.1}}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{scale: 1.1 }}
                         >
                             <IoHome />
                             <h3>Interior Painting</h3>
