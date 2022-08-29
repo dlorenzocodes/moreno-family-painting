@@ -82,7 +82,7 @@ button{
     background-image: linear-gradient( $background-mobile-gradient, $background-mobile-gradient), url('../assets/heroImage.jpg');
     background-position: -288px top;
     background-size: 977px;
-    background-repeat: no-repeat;
+    // background-repeat: no-repeat;
     background-attachment: fixed;
 
     @include tablet {
@@ -104,18 +104,19 @@ button{
 }
 
 .headline-section{
-    height: 242px;
+    height: 300px;
+
     @include tablet{
         height: 340px;
     }
     @include ipad{
-        height: 445px;
+        min-height: 500px;
     }
     @include desktop{
-        height: 55vh;
+        min-height: 600px;
     }
     @include large-desktop{
-        height: 64vh;
+        min-height: 64vh;
     }
 }
 
